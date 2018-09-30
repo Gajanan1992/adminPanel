@@ -1,0 +1,48 @@
+
+#header{
+    margin-top: 50px;
+}
+#buttons{
+    margin-top: 50px;
+
+}
+#dashboard{
+    background-color: #337ab7;
+    color: white;
+    padding: 20px;
+    font-size: 2.5em;
+
+}
+.table-title{
+    background-color: orange;
+    color: white;
+    padding: 20px;
+}
+.dash-box{
+    background-color: #337ab7;
+    color: white;
+    margin-top: 10px;
+}
+
+.dash-box1{
+    background-color: rgb(231, 175, 54);
+    color: white;
+    margin-top: 10px;
+}
+
+.dash-box2{
+    background-color: rgb(104, 182, 16);
+    color: white;
+    margin-top: 10px;
+}
+#main{
+    margin-top: 50px;
+}
+#footer{
+    padding: 20px;
+    height: 70px;
+    background-color: rgb(58, 15, 15);
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
