@@ -11,7 +11,7 @@ if(!isset($_SESSION['username'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Panel</title>
+    <title>Admin Panel Home</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -37,6 +37,29 @@ if(!isset($_SESSION['username'])){
         font-size: 1.5em;
     }
     </style>
+<script>
+    function showUser(str) {
+        if (str == "") {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        } else { 
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET","getProduct.php?q="+str,true);
+            xmlhttp.send();
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -92,6 +115,36 @@ if(!isset($_SESSION['username'])){
     </header>
     <main id="main">
         <div class="container">
+            <form action="">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="sel1">Category:</label>
+                            <select class="form-control" name="category" id="sel1" onchange="showUser(this.value)">
+                            <option val="select">All</option>   
+                            <option >Electronics</option>
+                                <option>Clothes</option>
+                                <option >Toys</option>
+                                <option >Furniture</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="sel1">Sub Category:</label>
+                            <select class="form-control" name="sub_category" id="sel1" onchange="">
+                            <option >Select Category</option>   
+                            <option selected>Mobile</option>
+                            <option >Home Appliances</option>
+                            <option >Pc and laptops</option>
+                            <option >Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="container" id="txtHint">
+        </div> -->
+        <div class="container">
             <div class="row">
                 <div class="col-sm-9">
                     <!-- Latest Users -->
@@ -99,7 +152,7 @@ if(!isset($_SESSION['username'])){
                         <div class="panel-heading">
                             <h3 class="panel-title">Product List</h3>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body" id="txtHint">
                             <table class="table table-stripped table-hover">
                                 <tr class="success">
                                     <th>PRODUCT ID</th>

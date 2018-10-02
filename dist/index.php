@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	
-    <title>Admin Panel</title>
+    <title>Admin Panel Login</title>
 	
 </head>
 <style>
@@ -56,7 +56,7 @@ body{
 									
 						<div class="form-group">
 							<label for="username" class="title"> User Name: </label>
-								<input type="text" class="form-control " name="username" placeholder="Enter the User Name" autocomplete="off" required/>	
+								<input type="text" class="form-control " name="username" placeholder="Enter the User Name" autocomplete="off" autofocus required/>	
 						</div>    
 						<div class="form-group">
 							<label for="pass " class="title"> Password: </label>

@@ -14,18 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	
-    <title>Admin LogIn</title>
-	<!-- <script>
-	function validateForm() {
-	var x = document.forms["loginform"]["username"].value;
-	var y = document.forms["loginform"]["password"].value;
+    <title>Registration</title>
 	
-    if (x != "admin" || y != "admin") {
-        alert("Enter correct username and Password");
-        return false;
-    }
-	}
-	</script> -->
 
 </head>
 <style>
@@ -63,11 +53,11 @@ a{
 									
 						<div class="form-group">
 							<label for="username" class="title"> User Name: </label>
-								<input type="text" class="form-control " name="username" placeholder="Enter the User Name" autocomplete="off" required/>	
+								<input type="text" class="form-control " name="username" minlength="5" maxlength="8" placeholder="Enter the User Name" autocomplete="off" required/>	
 						</div>    
 						<div class="form-group">
 							<label for="pass " class="title"> Password: </label>
-							<input type="password" class="form-control" name="password" placeholder="password" required/>
+							<input type="password" class="form-control" name="password" minlength="4" maxlength="8" placeholder="password" required/>
 						</div>
 										
 							<button type="submit" name="submit" class="btn btn-success btn-md pull-left"><span class="glyphicon glyphicon-log-in"></span> Register</button>
